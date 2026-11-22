@@ -4073,3 +4073,53 @@ footer i {
         margin-top: 0.3rem;
     }
 }
+
+/* ============================================================
+   HERO: ОТВЕТ НА ЦИТАТУ-БОЛЬ
+   ============================================================ */
+.hero-pain-answer {
+    position: relative;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.55;
+    color: var(--text);
+    max-width: 560px;
+    margin-bottom: 1.6rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--orange);
+    animation: fadeUp 1s 0.14s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.hero-pain-answer::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--orange), var(--orange-light));
+    border-radius: 3px;
+}
+
+.hero-pain-answer strong {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+/* На мобильных — компактнее */
+@media (max-width: 767.98px) {
+    .hero-pain-answer {
+        font-size: 1.02rem;
+        padding-left: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-pain-answer {
+        font-size: 0.95rem;
+        padding-left: 0.9rem;
+        margin-bottom: 1.3rem;
+    }
+}
