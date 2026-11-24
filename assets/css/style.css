@@ -4123,3 +4123,650 @@ footer i {
         margin-bottom: 1.3rem;
     }
 }
+
+/* ============================================================
+TIMELINE STYLES (На основе предоставленного примера)
+============================================================ */
+.experience {
+    background: var(--dark-gray);
+    /* Используем темный фон из переменной */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративное свечение на фоне */
+.experience::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 122, 26, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.timeline {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 140px 24px 1fr;
+    /* Увеличил место под дату */
+    gap: 30px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Вертикальная линия */
+.timeline-item:not(:last-child):before {
+    content: "";
+    position: absolute;
+    left: 152px;
+    /* Центрируем относительно колонки даты и точки */
+    top: 15px;
+    bottom: -10px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--orange) 0%, var(--light-gray) 100%);
+    opacity: 0.3;
+}
+
+/* Дата (УВЕЛИЧЕННЫЙ РАЗМЕР) */
+.timeline-date {
+    font-size: 1.4rem;
+    /* Было 11px, стало крупно */
+    font-weight: 800;
+    color: var(--text);
+    padding-top: 2px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+/* Точка на таймлайне */
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-top: 12px;
+    z-index: 2;
+    box-shadow: 0 0 0 6px rgba(255, 122, 26, 0.15);
+    /* Свечение вокруг точки */
+    position: relative;
+}
+
+/* Контент карточки */
+.timeline-content {
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--orange);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-role {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 1.2rem;
+}
+
+.timeline-content code {
+    background: var(--dark-gray);
+    color: var(--orange-light);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Теги навыков */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border: 1px solid var(--light-gray);
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.2s;
+}
+
+.timeline-item:hover .tags span {
+    border-color: rgba(255, 122, 26, 0.3);
+    color: var(--text);
+}
+
+/* ============================================================
+АДАПТИВ TIMELINE
+============================================================ */
+@media (max-width: 991.98px) {
+    .timeline-item {
+        grid-template-columns: 110px 20px 1fr;
+        gap: 20px;
+    }
+
+    .timeline-item:not(:last-child):before {
+        left: 120px;
+    }
+
+    .timeline-date {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .timeline {
+        margin: 0;
+        padding-left: 10px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        /* Одна колонка */
+        gap: 10px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+        /* Отступ для линии слева */
+    }
+
+    /* Линия смещается влево */
+    .timeline-item:not(:last-child):before {
+        left: 6px;
+        top: 45px;
+        /* Начинается ниже даты */
+        bottom: 0;
+    }
+
+    /* Точка тоже слева */
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 48px;
+        margin: 0;
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Дата становится частью потока над карточкой */
+    .timeline-date {
+        font-size: 1.5rem;
+        /* Еще крупнее на мобильных */
+        color: var(--orange);
+        margin-bottom: 5px;
+        padding-top: 0;
+    }
+
+    .timeline-content {
+        padding: 1.2rem;
+    }
+}
+
+/* ============================================================
+TIMELINE STYLES (На основе предоставленного примера)
+============================================================ */
+.experience {
+    background: var(--dark-gray);
+    /* Используем темный фон из переменной */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративное свечение на фоне */
+.experience::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 122, 26, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.timeline {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 140px 24px 1fr;
+    /* Увеличил место под дату */
+    gap: 30px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Вертикальная линия */
+.timeline-item:not(:last-child):before {
+    content: "";
+    position: absolute;
+    left: 152px;
+    /* Центрируем относительно колонки даты и точки */
+    top: 15px;
+    bottom: -10px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--orange) 0%, var(--light-gray) 100%);
+    opacity: 0.3;
+}
+
+/* Дата (УВЕЛИЧЕННЫЙ РАЗМЕР) */
+.timeline-date {
+    font-size: 1.4rem;
+    /* Было 11px, стало крупно */
+    font-weight: 800;
+    color: var(--text);
+    padding-top: 2px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+/* Точка на таймлайне */
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-top: 12px;
+    z-index: 2;
+    box-shadow: 0 0 0 6px rgba(255, 122, 26, 0.15);
+    /* Свечение вокруг точки */
+    position: relative;
+}
+
+/* Контент карточки */
+.timeline-content {
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--orange);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-role {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 1.2rem;
+}
+
+.timeline-content code {
+    background: var(--dark-gray);
+    color: var(--orange-light);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Теги навыков */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--light-gray);
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.2s;
+}
+
+.timeline-item:hover .tags span {
+    border-color: rgba(255, 122, 26, 0.3);
+    color: var(--text);
+}
+
+/* ============================================================
+АДАПТИВ TIMELINE
+============================================================ */
+@media (max-width: 991.98px) {
+    .timeline-item {
+        grid-template-columns: 110px 20px 1fr;
+        gap: 20px;
+    }
+
+    .timeline-item:not(:last-child):before {
+        left: 120px;
+    }
+
+    .timeline-date {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .timeline {
+        margin: 0;
+        padding-left: 10px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        /* Одна колонка */
+        gap: 10px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+        /* Отступ для линии слева */
+    }
+
+    /* Линия смещается влево */
+    .timeline-item:not(:last-child):before {
+        left: 6px;
+        top: 45px;
+        /* Начинается ниже даты */
+        bottom: 0;
+    }
+
+    /* Точка тоже слева */
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 48px;
+        margin: 0;
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Дата становится частью потока над карточкой */
+    .timeline-date {
+        font-size: 1.5rem;
+        /* Еще крупнее на мобильных */
+        color: var(--orange);
+        margin-bottom: 5px;
+        padding-top: 0;
+    }
+
+    .timeline-content {
+        padding: 1.2rem;
+    }
+}
+
+/* ============================================================
+TIMELINE STYLES (Опыт)
+============================================================ */
+.experience {
+    background: var(--dark-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративное свечение на фоне */
+.experience::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 122, 26, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.timeline {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 140px 24px 1fr;
+    /* Увеличил место под дату */
+    gap: 30px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Вертикальная линия */
+.timeline-item:not(:last-child):before {
+    content: "";
+    position: absolute;
+    left: 152px;
+    /* Центрируем относительно колонки даты и точки */
+    top: 15px;
+    bottom: -10px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--orange) 0%, var(--light-gray) 100%);
+    opacity: 0.3;
+}
+
+/* Дата (УВЕЛИЧЕННЫЙ РАЗМЕР) */
+.timeline-date {
+    font-size: 1.4rem;
+    /* Крупный шрифт */
+    font-weight: 800;
+    color: var(--text);
+    padding-top: 2px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+/* Точка на таймлайне */
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-top: 12px;
+    z-index: 2;
+    box-shadow: 0 0 0 6px rgba(255, 122, 26, 0.15);
+    /* Свечение вокруг точки */
+    position: relative;
+}
+
+/* Контент карточки */
+.timeline-content {
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--orange);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-role {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 1.2rem;
+}
+
+.timeline-content code {
+    background: var(--dark-gray);
+    color: var(--orange-light);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Теги навыков */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--light-gray);
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.2s;
+}
+
+.timeline-item:hover .tags span {
+    border-color: rgba(255, 122, 26, 0.3);
+    color: var(--text);
+}
+
+/* ============================================================
+АДАПТИВ TIMELINE
+============================================================ */
+@media (max-width: 991.98px) {
+    .timeline-item {
+        grid-template-columns: 110px 20px 1fr;
+        gap: 20px;
+    }
+
+    .timeline-item:not(:last-child):before {
+        left: 120px;
+    }
+
+    .timeline-date {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .timeline {
+        margin: 0;
+        padding-left: 10px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        /* Одна колонка */
+        gap: 10px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+        /* Отступ для линии слева */
+    }
+
+    /* Линия смещается влево */
+    .timeline-item:not(:last-child):before {
+        left: 6px;
+        top: 45px;
+        /* Начинается ниже даты */
+        bottom: 0;
+    }
+
+    /* Точка тоже слева */
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 48px;
+        margin: 0;
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Дата становится частью потока над карточкой */
+    .timeline-date {
+        font-size: 1.5rem;
+        /* Еще крупнее на мобильных */
+        color: var(--orange);
+        margin-bottom: 5px;
+        padding-top: 0;
+    }
+
+    .timeline-content {
+        padding: 1.2rem;
+    }
+}
