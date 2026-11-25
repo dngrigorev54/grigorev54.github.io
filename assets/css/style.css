@@ -4770,3 +4770,59 @@ TIMELINE STYLES (Опыт)
         padding: 1.2rem;
     }
 }
+
+
+/* ============================================================
+   АНИМАЦИЯ ЦИФР В HERO-TRUST
+   ============================================================ */
+.trust-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    transition: text-shadow 0.3s ease;
+}
+
+.trust-value span {
+    color: var(--orange);
+}
+
+.trust-item:hover .trust-value {
+    text-shadow: 0 0 20px rgba(255, 122, 26, 0.6);
+}
+
+/* Эффект «подпрыгивания» после завершения счёта */
+.trust-value.pop {
+    animation: trustNumberPop 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+}
+
+@keyframes trustNumberPop {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.15);
+    }
+
+    70% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Иконка SVG в trust-icon */
+.trust-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--orange);
+    transition: fill 0.3s ease;
+}
+
+.trust-item:hover .trust-icon svg {
+    fill: #000;
+}
