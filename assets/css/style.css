@@ -5209,3 +5209,243 @@ TIMELINE STYLES (Опыт)
         width: 100%;
     }
 }
+
+
+/* ============================================================
+29. SIDEBAR DOWNLOAD BUTTONS
+============================================================ */
+.sidebar-download-btn {
+    margin-bottom: 1rem;
+}
+
+.sd-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Иконка слева */
+.sd-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 122, 26, 0.1);
+    border: 1px solid rgba(255, 122, 26, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.sd-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Текст справа */
+.sd-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.sd-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+}
+
+.sd-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 2px;
+}
+
+/* Эффекты при наведении */
+.sd-link:hover {
+    border-color: var(--orange);
+    background: rgba(30, 30, 30, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -5px rgba(255, 122, 26, 0.25);
+}
+
+.sd-link:hover .sd-icon {
+    background: var(--orange);
+    color: #000;
+    border-color: var(--orange);
+    transform: rotate(-5deg);
+}
+
+.sd-link:hover .sd-title {
+    color: var(--orange);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 767.98px) {
+    .sd-link {
+        padding: 0.9rem 1rem;
+        gap: 0.8rem;
+    }
+    
+    .sd-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .sd-title {
+        font-size: 0.85rem;
+    }
+    
+    .sd-desc {
+        font-size: 0.7rem;
+    }
+}
+
+/* ============================================================
+30. BLOG PREVIEW SECTION (Главная страница)
+============================================================ */
+.section-blog-preview {
+    padding: 5.5rem 0;
+    background: var(--dark-gray); /* Чуть темнее основного фона для контраста */
+}
+
+.blog-preview-card {
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 22px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+    position: relative;
+}
+
+.blog-preview-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--orange);
+    box-shadow: 0 30px 50px -20px rgba(255, 122, 26, 0.2);
+}
+
+/* Изображение */
+.bpc-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bpc-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.blog-preview-card:hover .bpc-image img {
+    transform: scale(1.07);
+}
+
+.bpc-cat {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--orange);
+    color: #000;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.8rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 2;
+}
+
+/* Тело карточки */
+.bpc-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.bpc-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.bpc-meta i {
+    color: var(--orange);
+    margin-right: 4px;
+}
+
+.bpc-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.blog-preview-card:hover .bpc-title {
+    color: var(--orange);
+}
+
+.bpc-excerpt {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    flex: 1; /* Чтобы кнопка всегда была внизу */
+}
+
+.bpc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: gap 0.3s;
+    text-decoration: none;
+}
+
+.bpc-link i {
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+}
+
+.blog-preview-card:hover .bpc-link {
+    gap: 0.8rem;
+}
+
+.blog-preview-card:hover .bpc-link i {
+    transform: translateX(3px);
+}
+
+/* Адаптив */
+@media (max-width: 767.98px) {
+    .section-blog-preview {
+        padding: 4rem 0;
+    }
+    
+    .bpc-title {
+        font-size: 1.1rem;
+    }
+}
