@@ -30,7 +30,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
-  # - jekyll-paginate-v2
 
 paginate: 6          # сколько статей на странице (у вас 6 видимых)
 paginate_path: "/blog/page:num/"
