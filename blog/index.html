@@ -31,11 +31,11 @@ pagination:
                             alt="{{ post.title }}"> -->
                     </div>
                     <div class="post-card-body">
-                        <div class="post-card-meta">
+                        <!-- <div class="post-card-meta">
                             <span><i class="far fa-calendar"></i> {{ post.date | date: "%-d %B %Y" }}</span>
                             <span><i class="far fa-clock"></i> {{ post.reading_time | default: 8 }} мин чтения</span>
                             <span><i class="far fa-eye"></i> {{ post.views | default: 0 }}</span>
-                        </div>
+                        </div> -->
                         <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
                         <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
                         <div class="post-card-footer">

@@ -4944,3 +4944,268 @@ TIMELINE STYLES (Опыт)
         font-size: 1rem;
     }
 }
+
+
+/* ============================================================
+27. FINAL CONTACTS & REQUISITES BLOCK
+============================================================ */
+.final-contacts-section {
+    padding: 4rem 0 5rem;
+    background: var(--dark); /* Или var(--dark-gray) если хотите выделить фон */
+}
+
+/* --- Карточка личных контактов --- */
+.contact-info-card {
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 22px;
+    padding: 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-light));
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 122, 26, 0.4);
+    box-shadow: 0 20px 40px -15px rgba(255, 122, 26, 0.15);
+}
+
+.ci-header h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+    color: var(--text);
+}
+
+.ci-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.ci-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ci-link-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.ci-link-item i {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 122, 26, 0.1);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.ci-link-item:hover {
+    color: var(--text);
+    transform: translateX(5px);
+}
+
+.ci-link-item:hover i {
+    background: var(--orange);
+    color: #000;
+}
+
+.ci-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.messenger-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.msg-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 140px;
+}
+
+.msg-btn.telegram {
+    background: rgba(42, 171, 238, 0.1);
+    color: #2AABEE;
+    border: 1px solid rgba(42, 171, 238, 0.2);
+}
+
+.msg-btn.telegram:hover {
+    background: #2AABEE;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(42, 171, 238, 0.4);
+}
+
+.msg-btn.max {
+    background: rgba(255, 122, 26, 0.1);
+    color: var(--orange);
+    border: 1px solid rgba(255, 122, 26, 0.2);
+}
+
+.msg-btn.max:hover {
+    background: var(--orange);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(255, 122, 26, 0.4);
+}
+
+/* --- Карточка реквизитов --- */
+.requisites-card {
+    background: var(--dark-gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 22px;
+    padding: 2.5rem;
+    height: 100%;
+    position: relative;
+    transition: all 0.4s;
+}
+
+.requisites-card:hover {
+    border-color: rgba(255, 122, 26, 0.3);
+}
+
+.rc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--light-gray);
+}
+
+.rc-header i {
+    font-size: 1.5rem;
+    color: var(--orange);
+    opacity: 0.8;
+}
+
+.rc-header h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.rc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+}
+
+.rc-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.rc-row.full-width {
+    grid-column: 1 / -1;
+}
+
+.rc-row.divider-top {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+.rc-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.rc-value {
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 500;
+    font-family: 'Inter', sans-serif; /* Можно заменить на моноширинный для цифр */
+}
+
+.rc-value.highlight {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+}
+
+.rc-value.small-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Адаптив для блока контактов */
+@media (max-width: 767.98px) {
+    .final-contacts-section {
+        padding: 3rem 0;
+    }
+    
+    .contact-info-card, 
+    .requisites-card {
+        padding: 1.8rem;
+    }
+
+    .rc-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        gap: 1.2rem;
+    }
+    
+    .messenger-buttons {
+        flex-direction: column;
+    }
+    
+    .msg-btn {
+        width: 100%;
+    }
+}
