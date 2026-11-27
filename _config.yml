@@ -4,6 +4,7 @@ author: "Дмитрий Григорьев"
 lang: ru
 url: "https://grigorev54.ru"
 baseurl: ""
+base_path: /images
 
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
