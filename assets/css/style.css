@@ -4826,3 +4826,121 @@ TIMELINE STYLES (Опыт)
 .trust-item:hover .trust-icon svg {
     fill: #000;
 }
+
+
+/* ============================================================
+ПАГИНАЦИЯ БЛОГА
+============================================================ */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 4rem;
+}
+
+.pagination-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--gray);
+    border: 1px solid var(--light-gray);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px; /* Стиль "таблетки" как у кнопок */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pagination-nav:hover {
+    border-color: rgba(255, 122, 26, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Кнопки навигации (стрелки) */
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--light-gray);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+    text-decoration: none;
+}
+
+.pagination-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Ховер эффект для активных кнопок */
+.pagination-btn:not(.disabled):hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 122, 26, 0.3);
+}
+
+.pagination-btn:not(.disabled):hover i {
+    transform: scale(1.1);
+}
+
+/* Состояние Disabled (когда нет следующей/предыдущей страницы) */
+.pagination-btn.disabled {
+    opacity: 0.3;
+    cursor: default;
+    border-color: transparent;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Инфо о страницах (Текущая / Всего) */
+.pagination-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    min-width: 80px;
+    justify-content: center;
+}
+
+.pagination-info .current-page {
+    color: var(--orange);
+    font-size: 1.1rem;
+}
+
+.pagination-info .separator {
+    color: var(--text-muted);
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.pagination-info .total-pages {
+    color: var(--text-muted);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 575.98px) {
+    .pagination-nav {
+        padding: 0.4rem 0.8rem;
+        gap: 0.8rem;
+    }
+    
+    .pagination-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 0.85rem;
+    }
+    
+    .pagination-info {
+        font-size: 0.85rem;
+        min-width: 60px;
+    }
+    
+    .pagination-info .current-page {
+        font-size: 1rem;
+    }
+}

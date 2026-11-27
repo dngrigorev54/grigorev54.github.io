@@ -1,7 +1,12 @@
 ---
 layout: page
 title: "Блог · Дмитрий Григорьев"
-description: "Статьи о разработке, спасении сайтов, WordPress, Bitrix и использовании ИИ в работе."
+description: "..."
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: '/blog/page/:num/'
+  sort_reverse: true
 ---
 
 <section class="page-header">
@@ -18,7 +23,7 @@ description: "Статьи о разработке, спасении сайто�
     <div class="blog-layout">
         <main>
             <div id="posts-container">
-                {% for post in site.posts %}
+                {% for post in paginator.posts %}
                 <article class="post-card animate-on-scroll">
                     <div class="post-card-image">
                         <span class="post-card-category">{{ post.category }}</span>
@@ -45,7 +50,43 @@ description: "Статьи о разработке, спасении сайто�
                 {% endfor %}
             </div>
 
-            {% include load-more.html %}
+            <!-- Пагинация -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination-wrapper animate-on-scroll">
+    <nav class="pagination-nav" aria-label="Навигация по страницам блога">
+        
+        <!-- Кнопка Назад -->
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn prev" aria-label="Предыдущая страница">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        {% else %}
+        <span class="pagination-btn disabled" aria-hidden="true">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        {% endif %}
+
+        <!-- Информация о странице -->
+        <div class="pagination-info">
+            <span class="current-page">{{ paginator.page }}</span>
+            <span class="separator">/</span>
+            <span class="total-pages">{{ paginator.total_pages }}</span>
+        </div>
+
+        <!-- Кнопка Вперед -->
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn next" aria-label="Следующая страница">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        {% else %}
+        <span class="pagination-btn disabled" aria-hidden="true">
+            <i class="fas fa-chevron-right"></i>
+        </span>
+        {% endif %}
+        
+    </nav>
+</div>
+{% endif %}
         </main>
 
         {% include sidebar.html %}

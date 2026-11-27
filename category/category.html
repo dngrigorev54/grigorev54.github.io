@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Категория: <span class="highlight">{{ page.category }}</span></h1>
+    </div>
+</section>
+
+<div class="container">
+    <div class="blog-layout">
+        <main>
+            <div id="posts-container">
+                {% assign posts = site.categories[page.category] %}
+                {% for post in posts %}
+                <article class="post-card animate-on-scroll">
+                    <div class="post-card-body">
+                        <h2 class="post-card-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h2>
+                        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </main>
+        {% include sidebar.html %}
+    </div>
+</div>
