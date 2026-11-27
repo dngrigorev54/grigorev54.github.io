@@ -27,8 +27,8 @@ pagination:
                 <article class="post-card animate-on-scroll">
                     <div class="post-card-image">
                         <span class="post-card-category">{{ post.category }}</span>
-                        <img src="{{ post.cover | default: '/img/placeholder.webp' | relative_url }}"
-                            alt="{{ post.title }}">
+                        <!-- <img src="{{ post.cover | default: '/img/placeholder.webp' | relative_url }}"
+                            alt="{{ post.title }}"> -->
                     </div>
                     <div class="post-card-body">
                         <div class="post-card-meta">
@@ -90,5 +90,27 @@ pagination:
         </main>
 
         {% include sidebar.html %}
+    </div>
+</div>
+
+<!-- SPEED DIAL -->
+<div class="speed-dial" id="speedDial">
+    <div class="speed-dial-actions">
+        <a href="https://t.me/fiba54" class="speed-action" data-label="Telegram" aria-label="Telegram"><i
+                class="fab fa-telegram"></i></a>
+        <a href="https://web.max.ru/65509464" target="_blank" rel="noopener" class="speed-action" data-label="MAX"
+            aria-label="MAX">
+            <img src="../img/max.png" width="24" height="24">
+        </a>
+    </div>
+    <button class="speed-toggle" id="speedToggle" aria-label="Открыть контакты" aria-expanded="false"><i
+            class="fas fa-comments"></i></button>
+</div>
+
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть"><i class="fas fa-times"></i></button>
+        <img src="" alt="Просмотр" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
