@@ -5327,7 +5327,7 @@ TIMELINE STYLES (Опыт)
     border: 1px solid var(--light-gray);
     border-radius: 22px;
     overflow: hidden;
-    height: 80%;
+    height: auto;
     display: flex;
     flex-direction: column;
     transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
