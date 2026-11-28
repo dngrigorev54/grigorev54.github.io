@@ -15,9 +15,9 @@ layout: default
         </span>
         <h1 class="article-title">{{ page.title }}</h1>
         <div class="article-meta">
-            <span><i class="far fa-calendar"></i> {{ page.date | date: "%-d %B %Y" }}</span>
+            <!-- <span><i class="far fa-calendar"></i> {{ page.date | date: "%-d %B %Y" }}</span>
             <span><i class="far fa-clock"></i> {{ page.reading_time | default: 8 }} мин чтения</span>
-            <span><i class="far fa-eye"></i> {{ page.views | default: 0 }} просмотров</span>
+            <span><i class="far fa-eye"></i> {{ page.views | default: 0 }} просмотров</span> -->
             <span><i class="fas fa-user"></i> {{ site.author }}</span>
         </div>
     </div>
@@ -26,7 +26,7 @@ layout: default
 <div class="container">
     <div class="article-layout">
         <main>
-            <article class="article-content animate-on-scroll">
+            <article class="article-content">
                 {% if page.cover %}
                 <div class="article-hero-image">
                     <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
@@ -40,7 +40,7 @@ layout: default
                 </div>
             </article>
 
-            <div class="author-box animate-on-scroll">
+            <div class="author-box">
                 <div class="author-avatar">ДГ</div>
                 <div class="author-info">
                     <h4>{{ site.author }}</h4>
@@ -53,7 +53,12 @@ layout: default
             </div>
         </main>
 
-        {% include sidebar.html %}
+                   <!-- RIGHT: SIDEBAR -->
+            <div class="sidebar-sticky-wrapper">
+                <aside class="sidebar">
+                    {% include sidebar.html %}
+                </aside>
+            </div>
     </div>
 </div>
 

@@ -921,10 +921,62 @@ permalink: /
                     <a href="#contact" class="btn-price">Обсудить проект</a>
                 </div>
             </div>
+
+            <div class="col-md-6 col-lg-4 animate-on-scroll delay-1">
+                <div class="price-card">
+                    <h4>Интернет-магазин на Tilda</h4>
+                    <div class="price-value">от 49 000 ₽</div>
+                    <div class="price-time"><i class="far fa-clock me-1"></i> 3–5 дней</div>
+                    <ul class="price-list">
+                        <li><i class="fas fa-check"></i> Дизайн под ваш бренд</li>
+                        <li><i class="fas fa-check"></i> Адаптив под все устройства</li>
+                        <li><i class="fas fa-check"></i> Форма заявки + CRM</li>
+                        <li><i class="fas fa-check"></i> Базовая SEO-настройка</li>
+                        <li><i class="fas fa-check"></i> Обучение управлению</li>
+                        <li><i class="fas fa-check"></i> 5-7 "экранов"</li>
+                    </ul>
+                    <a href="#contact" class="btn-price">Обсудить проект</a>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 animate-on-scroll delay-1">
                 <div class="price-card">
                     <h4>Лендинг / визитка на WordPress</h4>
                     <div class="price-value">от 49 000 ₽</div>
+                    <div class="price-time"><i class="far fa-clock me-1"></i> 3–5 дней</div>
+                    <ul class="price-list">
+                        <li><i class="fas fa-check"></i> Дизайн под ваш бренд</li>
+                        <li><i class="fas fa-check"></i> Адаптив под все устройства</li>
+                        <li><i class="fas fa-check"></i> Форма заявки + CRM</li>
+                        <li><i class="fas fa-check"></i> Базовая SEO-настройка</li>
+                        <li><i class="fas fa-check"></i> Обучение управлению</li>
+                        <li><i class="fas fa-check"></i> 5-7 "экранов"</li>
+                    </ul>
+                    <a href="#contact" class="btn-price">Обсудить проект</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 animate-on-scroll delay-1">
+                <div class="price-card">
+                    <h4>Каталог товаров на WordPress</h4>
+                    <div class="price-value">от 79 000 ₽</div>
+                    <div class="price-time"><i class="far fa-clock me-1"></i> 3–5 дней</div>
+                    <ul class="price-list">
+                        <li><i class="fas fa-check"></i> Дизайн под ваш бренд</li>
+                        <li><i class="fas fa-check"></i> Адаптив под все устройства</li>
+                        <li><i class="fas fa-check"></i> Форма заявки + CRM</li>
+                        <li><i class="fas fa-check"></i> Базовая SEO-настройка</li>
+                        <li><i class="fas fa-check"></i> Обучение управлению</li>
+                        <li><i class="fas fa-check"></i> 5-7 "экранов"</li>
+                    </ul>
+                    <a href="#contact" class="btn-price">Обсудить проект</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 animate-on-scroll delay-1">
+                <div class="price-card">
+                    <h4>Интернет-магазин на WordPress</h4>
+                    <div class="price-value">от 99 000 ₽</div>
                     <div class="price-time"><i class="far fa-clock me-1"></i> 3–5 дней</div>
                     <ul class="price-list">
                         <li><i class="fas fa-check"></i> Дизайн под ваш бренд</li>
@@ -1367,62 +1419,31 @@ permalink: /
 
         <div class="row g-4">
             
-            <!-- Статья 1 -->
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+
+
+{% for post in site.posts limit:3 %}
+
+
+
+<div class="col-lg-4 col-md-6 animate-on-scroll">
                 <article class="blog-preview-card">
-                    <div class="bpc-image">
-                        <img src="https://via.placeholder.com/600x400/1e1e1e/ff7a1a?text=WordPress+Security" alt="Взломанный сайт">
-                        <span class="bpc-cat">Спасение сайтов</span>
-                    </div>
+                    
                     <div class="bpc-body">
                         <!-- <div class="bpc-meta">
                             <span><i class="fa-regular fa-calendar"></i> 12 мар 2026</span>
                             <span><i class="fa-regular fa-clock"></i> 8 мин</span>
                         </div> -->
-                        <h3 class="bpc-title">Как я вычистил взломанный WordPress за 3 дня</h3>
-                        <p class="bpc-excerpt">Сайт был заражён, хостинг блокировал доступ. Рассказываю пошагово, как найти следы взлома и настроить защиту.</p>
-                        <a href="blog-post.html" class="bpc-link">Читать статью <i class="fa-solid fa-chevron-right"></i></a>
+                        <h3 class="bpc-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h3>
+                        <p class="bpc-excerpt">{{ post.description }}</p>
+                        <a href="{{ post.url | relative_url }}" class="bpc-link">Читать статью <i class="fa-solid fa-chevron-right"></i></a>
                     </div>
                 </article>
             </div>
 
-            <!-- Статья 2 -->
-            <div class="col-lg-4 col-md-6 animate-on-scroll delay-1">
-                <article class="blog-preview-card">
-                    <div class="bpc-image">
-                        <img src="https://via.placeholder.com/600x400/1e1e1e/ff7a1a?text=AI+Agents" alt="ИИ в разработке">
-                        <span class="bpc-cat">ИИ в работе</span>
-                    </div>
-                    <div class="bpc-body">
-                        <!-- <div class="bpc-meta">
-                            <span><i class="fa-regular fa-calendar"></i> 8 мар 2026</span>
-                            <span><i class="fa-regular fa-clock"></i> 6 мин</span>
-                        </div> -->
-                        <h3 class="bpc-title">ИИ-агенты в работе фронтендера: ускорение в 2 раза</h3>
-                        <p class="bpc-excerpt">Делюсь реальными кейсами, где ChatGPT и другие агенты сэкономили мне часы работы, а где они пока бесполезны.</p>
-                        <a href="blog-post.html" class="bpc-link">Читать статью <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </article>
-            </div>
+{% endfor %}
 
-            <!-- Статья 3 -->
-            <div class="col-lg-4 col-md-6 animate-on-scroll delay-2">
-                <article class="blog-preview-card">
-                    <div class="bpc-image">
-                        <img src="https://via.placeholder.com/600x400/1e1e1e/ff7a1a?text=MODx+Legacy" alt="Редкие CMS">
-                        <span class="bpc-cat">Редкие CMS</span>
-                    </div>
-                    <div class="bpc-body">
-                        <!-- <div class="bpc-meta">
-                            <span><i class="fa-regular fa-calendar"></i> 3 мар 2026</span>
-                            <span><i class="fa-regular fa-clock"></i> 7 мин</span>
-                        </div> -->
-                        <h3 class="bpc-title">Доработка сайта на MODx: разбор чужого кода</h3>
-                        <p class="bpc-excerpt">Другие подрядчики отказались от проекта на MODx v1.0.15. Рассказываю, как я подхожу к разбору незнакомой CMS.</p>
-                        <a href="blog-post.html" class="bpc-link">Читать статью <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </article>
-            </div>
 
         </div>
     </div>
@@ -1538,6 +1559,18 @@ permalink: /
                     </div>
                     
                     <div class="rc-grid">
+
+                        <div class="rc-row">
+                            <span class="rc-label">Самозанятый</span>
+                            <span class="rc-value">Работаю по договору</span>
+                        </div>
+
+                        <div class="rc-row">
+                            <span class="rc-label">Проведение работ</span>
+                            <span class="rc-value">по Новосибирскому времени (GMT+7)<br>
+                            С 8:00 до 18:00</span>
+                        </div>
+
                         <div class="rc-row full-width">
                             <span class="rc-label">Расчётный счёт</span>
                             <span class="rc-value highlight">40817810644054071704</span>
@@ -1571,10 +1604,20 @@ permalink: /
                             <span class="rc-value">630032, НОВОСИБИРСК, МКР. ГОРСКИЙ, 66</span>
                         </div>
 
+                        
+          
+                        
+
+                        
+
+            
+        
+
                         <!-- <div class="rc-row full-width divider-top">
                             <span class="rc-label">ИНН</span>
                             <span class="rc-value">540700255204</span>
                         </div> -->
+                        
                         
                     </div>
                 </div>
